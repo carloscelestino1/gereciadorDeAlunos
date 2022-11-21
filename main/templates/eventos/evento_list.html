@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de eventos{% endblock %}
+
+{% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for eventSummary in lista_sumario %}      
+        <tr>
+            <th scope="row">1</th>
+            <td>{{eventSummary.summary}}</td>
+            <td>
+            <a href="/deleteevent/{{eventSummary.id}}" class="delete-btn"> deletar </a>
+            </td>
+        </tr>            
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}

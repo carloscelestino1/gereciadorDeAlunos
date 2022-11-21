@@ -22,3 +22,9 @@ class Aluno(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Event(models.Model):
+    aluno = models.ForeignKey(Aluno, verbose_name=("eventos"), on_delete=models.CASCADE, null=True)
+    event = models.CharField(max_length=255)
+    def __str__(self):
+        return self.event
