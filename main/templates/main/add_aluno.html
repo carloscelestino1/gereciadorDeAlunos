@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block nome %}Adicione um aluno{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Informações do aluno:</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success" value="Salvar">
+    </form>
+</div>
+{% endblock %}  
